@@ -2,7 +2,9 @@
 根据JSON 生成 生成JSON的PHP代码。 
 
 
-JSONToPhpCode 是一个根据JSON字符串 反向生成php代码的工具项目. 用于根据接口文档， 反向生成php代码， 直接运用于接口。
+JSONToPhpCode 是一个根据JSON字符串 反向生成php代码的工具项目. 
+
+用于根据接口文档， 反向生成php代码， 直接运用于接口。
 
 ##From 
      {
