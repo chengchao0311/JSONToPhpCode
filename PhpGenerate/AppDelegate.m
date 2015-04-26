@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ObjectPhpResult.h"
 
-@interface AppDelegate ()
+@interface AppDelegate (){
+    int objecCount;
+}
 
 @end
 
@@ -17,8 +20,89 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    objecCount = 0;
+    
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"b"
+                                                     ofType:@"txt"];
+    NSData* contentData = [NSData dataWithContentsOfFile:path];
+    
+    NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingAllowFragments error:NULL];
+    
+    
+    NSString * phpStringHeader = @"\r\n<?php\r\nerror_reporting(0);\r\nheader('Content-Type: application/json');\r\n";
+    NSString * phpStringConetnt = @"";
+    NSString * phpStringEnd = @"echo json_encode($object0, JSON_PRETTY_PRINT);\r\n?>";
+    phpStringConetnt = ((ObjectPhpResult*)[self phpContentString:dict]).resultString;
+    
+    NSString * result = [[phpStringHeader stringByAppendingString:phpStringConetnt] stringByAppendingString:phpStringEnd];
+    
+    NSLog(@"%@", result);
+    
     return YES;
 }
+
+
+- (ObjectPhpResult *)phpContentString:(id)source{
+    
+    NSString * resultString = @"";
+    NSString *objectString = [NSString stringWithFormat:@"$object%i", objecCount];
+    ObjectPhpResult * phpResult = [ObjectPhpResult new];
+    if ([source isKindOfClass:[NSDictionary class]]) {
+        NSDictionary * dict = (NSDictionary*)source;
+        for (NSString * key in [dict allKeys]) {
+            id  value = [dict objectForKey:key];
+            if ([value isKindOfClass:[NSString class]]) {
+                NSString * phpString = [NSString stringWithFormat:@"%@->%@=\"%@\";\r\n",objectString,key,value];
+                resultString = [resultString stringByAppendingString:phpString];
+            }else{
+                objecCount ++;
+                ObjectPhpResult * objectPR = [self phpContentString:value];
+                resultString = [resultString stringByAppendingString:objectPR.resultString];
+                
+                NSString * objectFormat;
+                if ([value isKindOfClass:[NSDictionary class]]) {
+                    objectFormat = [NSString stringWithFormat:@"%@->%@=%@;\r\n",objectString,key,objectPR.objectName];
+                }else{
+                    objectFormat = [NSString stringWithFormat:@"%@->%@=%@;\r\n",objectString,key,objectPR.arrayName];
+                }
+                
+                resultString = [resultString stringByAppendingString:objectFormat];
+                
+            }
+            
+        }
+    }else if([source isKindOfClass:[NSArray class]]){
+        NSDate * date = [NSDate date];
+        NSString * dateString = [NSString stringWithFormat:@"%f",[date timeIntervalSince1970]];
+        dateString = [dateString stringByReplacingOccurrencesOfString:@"."
+                                                           withString:@""];
+        NSString * arrayName = [NSString stringWithFormat:@"$array%@", dateString];
+        phpResult.arrayName = arrayName;
+        NSString * arrayDeclareString = [NSString stringWithFormat:@"%@ = array();\r\n",arrayName];
+        resultString = [resultString stringByAppendingString:arrayDeclareString];
+        NSArray * souceArray = (NSArray*)source;
+        for (id value in souceArray) {
+            if ([value isKindOfClass:[NSString class]]) {
+                NSString * phpString = [NSString stringWithFormat:@"array_push(%@, \"%@\");\r\n",arrayName,value];
+                resultString = [resultString stringByAppendingString:phpString];
+            }else{
+                objecCount ++;
+                ObjectPhpResult * objectPR = [self phpContentString:value];
+                resultString = [resultString stringByAppendingString:objectPR.resultString];
+                NSString * phpString = [NSString stringWithFormat:@"array_push(%@, %@);\r\n",phpResult.arrayName,objectPR.objectName];
+                resultString = [resultString stringByAppendingString:phpString];
+            }
+        }
+    }
+    
+    phpResult.objectName = objectString;
+    phpResult.resultString = resultString;
+    
+    return phpResult;
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

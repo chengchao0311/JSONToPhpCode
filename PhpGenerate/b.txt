@@ -1,0 +1,32 @@
+{
+"content": {
+" depositLoanAccount ": "6226**********5644",
+" incomeApproach": "返还至存贷通账户",
+" managementExpense": "100.08元",
+" cycle ": "3个月",
+"loanList": [
+{
+"cardId": "00002",
+"cardNum": "6226**********5644",
+"loanAmount": "100万元"
+},
+{
+"cardId": "00002",
+"cardNum": "6226**********5644",
+"loanAmount": "100万元"
+}
+],
+"depositList": [
+{
+"cardId": "00002",
+"cardNum": "6226**********5644"
+},
+{
+"cardId": "00002",
+"cardNum": "6226**********5644"
+}
+]
+},
+"returnDescription": "Operate Success",
+"rtnCode": "10000"
+}

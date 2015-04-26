@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		62E379171AEC7BF600D65301 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E379161AEC7BF600D65301 /* main.m */; };
 		62E3791A1AEC7BF600D65301 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E379191AEC7BF600D65301 /* AppDelegate.m */; };
-		62E3791D1AEC7BF600D65301 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E3791C1AEC7BF600D65301 /* ViewController.m */; };
 		62E379201AEC7BF600D65301 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E3791E1AEC7BF600D65301 /* Main.storyboard */; };
 		62E379221AEC7BF600D65301 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E379211AEC7BF600D65301 /* Images.xcassets */; };
 		62E379251AEC7BF600D65301 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E379231AEC7BF600D65301 /* LaunchScreen.xib */; };
 		62E379311AEC7BF600D65301 /* PhpGenerateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E379301AEC7BF600D65301 /* PhpGenerateTests.m */; };
+		62E3793D1AEC7C6000D65301 /* b.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62E3793A1AEC7C6000D65301 /* b.txt */; };
+		62E3793E1AEC7C6000D65301 /* ObjectPhpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E3793C1AEC7C6000D65301 /* ObjectPhpResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,15 @@
 		62E379161AEC7BF600D65301 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62E379181AEC7BF600D65301 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62E379191AEC7BF600D65301 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		62E3791B1AEC7BF600D65301 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		62E3791C1AEC7BF600D65301 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		62E3791F1AEC7BF600D65301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62E379211AEC7BF600D65301 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		62E379241AEC7BF600D65301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		62E3792A1AEC7BF600D65301 /* PhpGenerateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhpGenerateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E3792F1AEC7BF600D65301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62E379301AEC7BF600D65301 /* PhpGenerateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhpGenerateTests.m; sourceTree = "<group>"; };
+		62E3793A1AEC7C6000D65301 /* b.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = b.txt; sourceTree = "<group>"; };
+		62E3793B1AEC7C6000D65301 /* ObjectPhpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPhpResult.h; sourceTree = "<group>"; };
+		62E3793C1AEC7C6000D65301 /* ObjectPhpResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectPhpResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +83,11 @@
 		62E379131AEC7BF600D65301 /* PhpGenerate */ = {
 			isa = PBXGroup;
 			children = (
+				62E3793A1AEC7C6000D65301 /* b.txt */,
+				62E3793B1AEC7C6000D65301 /* ObjectPhpResult.h */,
+				62E3793C1AEC7C6000D65301 /* ObjectPhpResult.m */,
 				62E379181AEC7BF600D65301 /* AppDelegate.h */,
 				62E379191AEC7BF600D65301 /* AppDelegate.m */,
-				62E3791B1AEC7BF600D65301 /* ViewController.h */,
-				62E3791C1AEC7BF600D65301 /* ViewController.m */,
 				62E3791E1AEC7BF600D65301 /* Main.storyboard */,
 				62E379211AEC7BF600D65301 /* Images.xcassets */,
 				62E379231AEC7BF600D65301 /* LaunchScreen.xib */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62E379201AEC7BF600D65301 /* Main.storyboard in Resources */,
+				62E3793D1AEC7C6000D65301 /* b.txt in Resources */,
 				62E379251AEC7BF600D65301 /* LaunchScreen.xib in Resources */,
 				62E379221AEC7BF600D65301 /* Images.xcassets in Resources */,
 			);
@@ -219,8 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62E3791D1AEC7BF600D65301 /* ViewController.m in Sources */,
 				62E3791A1AEC7BF600D65301 /* AppDelegate.m in Sources */,
+				62E3793E1AEC7C6000D65301 /* ObjectPhpResult.m in Sources */,
 				62E379171AEC7BF600D65301 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +420,7 @@
 				62E379361AEC7BF600D65301 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62E379371AEC7BF600D65301 /* Build configuration list for PBXNativeTarget "PhpGenerateTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +429,7 @@
 				62E379391AEC7BF600D65301 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
