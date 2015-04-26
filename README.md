@@ -6,8 +6,8 @@ JSONToPhpCode 是一个根据JSON字符串 反向生成  php代码的工具项�
 
 
 ##From 
-  {
-    "content": {
+     {
+       "content": {
         " depositLoanAccount ": "6226**********5644",
         " incomeApproach": "返还至存贷通账户",
         " managementExpense": "100.08元",
@@ -34,10 +34,10 @@ JSONToPhpCode 是一个根据JSON字符串 反向生成  php代码的工具项�
                 "cardNum": "6226**********5644"
             }
         ]
-    },
-    "returnDescription": "Operate Success",
-    "rtnCode": "10000"
-}
+     },
+      "returnDescription": "Operate Success",
+      "rtnCode": "10000"
+     }
 
 
 ##To
