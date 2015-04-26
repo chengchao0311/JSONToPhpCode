@@ -13,7 +13,7 @@
 		62E379221AEC7BF600D65301 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E379211AEC7BF600D65301 /* Images.xcassets */; };
 		62E379251AEC7BF600D65301 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E379231AEC7BF600D65301 /* LaunchScreen.xib */; };
 		62E379311AEC7BF600D65301 /* PhpGenerateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E379301AEC7BF600D65301 /* PhpGenerateTests.m */; };
-		62E3793D1AEC7C6000D65301 /* b.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62E3793A1AEC7C6000D65301 /* b.txt */; };
+		62E3793D1AEC7C6000D65301 /* source.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62E3793A1AEC7C6000D65301 /* source.txt */; };
 		62E3793E1AEC7C6000D65301 /* ObjectPhpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E3793C1AEC7C6000D65301 /* ObjectPhpResult.m */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,7 @@
 		62E3792A1AEC7BF600D65301 /* PhpGenerateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhpGenerateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E3792F1AEC7BF600D65301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62E379301AEC7BF600D65301 /* PhpGenerateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhpGenerateTests.m; sourceTree = "<group>"; };
-		62E3793A1AEC7C6000D65301 /* b.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = b.txt; sourceTree = "<group>"; };
+		62E3793A1AEC7C6000D65301 /* source.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = source.txt; sourceTree = "<group>"; };
 		62E3793B1AEC7C6000D65301 /* ObjectPhpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPhpResult.h; sourceTree = "<group>"; };
 		62E3793C1AEC7C6000D65301 /* ObjectPhpResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectPhpResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +83,7 @@
 		62E379131AEC7BF600D65301 /* PhpGenerate */ = {
 			isa = PBXGroup;
 			children = (
-				62E3793A1AEC7C6000D65301 /* b.txt */,
+				62E3793A1AEC7C6000D65301 /* source.txt */,
 				62E3793B1AEC7C6000D65301 /* ObjectPhpResult.h */,
 				62E3793C1AEC7C6000D65301 /* ObjectPhpResult.m */,
 				62E379181AEC7BF600D65301 /* AppDelegate.h */,
@@ -203,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62E379201AEC7BF600D65301 /* Main.storyboard in Resources */,
-				62E3793D1AEC7C6000D65301 /* b.txt in Resources */,
+				62E3793D1AEC7C6000D65301 /* source.txt in Resources */,
 				62E379251AEC7BF600D65301 /* LaunchScreen.xib in Resources */,
 				62E379221AEC7BF600D65301 /* Images.xcassets in Resources */,
 			);

@@ -23,7 +23,7 @@
     objecCount = 0;
     
     
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"b"
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"source"
                                                      ofType:@"txt"];
     NSData* contentData = [NSData dataWithContentsOfFile:path];
     
