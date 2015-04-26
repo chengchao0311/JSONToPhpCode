@@ -27,7 +27,13 @@
                                                      ofType:@"txt"];
     NSData* contentData = [NSData dataWithContentsOfFile:path];
     
-    NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingAllowFragments error:NULL];
+    NSError * error;
+    NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingAllowFragments error:&error];
+    
+    if (error) {
+        NSLog(@"source is not a json");
+        return YES;
+    }
     
     
     NSString * phpStringHeader = @"\r\n<?php\r\nerror_reporting(0);\r\nheader('Content-Type: application/json');\r\n";
